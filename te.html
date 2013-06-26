@@ -1,0 +1,52 @@
+<html>
+	<head>
+ 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+ 	<script>
+		$(document).ready(function() {
+			function createContact(json) {
+			 alert(JSON.stringify(json));
+			}
+
+			$('#create-contact').click(function(e) {
+				$.ajax({
+				     url:"http://rivkas-redmine.herokuapp.com/contacts/test?project_id=test&"+$('input').serialize(),
+				     dataType: 'jsonp',
+				     success:function(json){
+				     	$('#success').html('Contact Added Successfully');
+				     },
+				     error:function(e){
+				     	$('#success').html('Error adding contact - TRY AGAIN');
+				     	console.log(e);
+				         alert("Error");
+				     },
+				});
+			});
+		});
+ 	</script>
+
+    </head>
+ 	<body>
+		 <form>
+			<label>first name</label>
+			<input type=text name="first_name">
+			<label>last name</label>
+			<input type=text name="last_name">
+			<label>phone</label>
+			<input type=text name="phone">
+			<label>email</label>
+			<input type=text name="email">
+			<br>
+			<label>email</label>
+			<input type=text name="invitees[][email]">
+			<label>last name</label>
+			<input type=text name="invitees[][last_name]">
+			<br>
+			<label>email</label>
+			<input type=text name="invitees[][email]">
+			<label>last name</label>
+			<input type=text name="invitees[][last_name]">
+			<input type=button id="create-contact" value="submit"/>
+		  </form>
+	 		<div id="success"></div>
+    </body>
+</html>

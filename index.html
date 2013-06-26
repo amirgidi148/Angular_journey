@@ -1,0 +1,60 @@
+    <!doctype html>
+<html ng-app="myApp">
+    
+    <head>
+        <meta charset="utf-8" />
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script> 
+        <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="create_contact.js"></script> -->
+         <script src="main.js"></script> 
+        <link   rel="stylesheet" href="index.css" type="text/css"/>
+
+        <title>My AngularJS App</title>
+
+    </head>
+    
+    <body >
+      <div ng-controller="getPersonCtrl">
+        <!-- <li ng-repeat="header in ['SIGN UP NOW!' , 'INVITE UP TO 5 FRIENDS']"> -->
+       
+            <form id="leadForm" name="leadForm" novalidate="" data-ng-submit="addPerson()"  class="ng-dirty ng-valid-email ng-valid ng-valid-required">
+            <h1> SIGN UP NOW! </h1>
+            <input type="text" required="" placeholder="First Name" id="firstName" name="firstName" data-ng-model="firstName" class="ng-pristine ng-invalid ng-inva
+            lid-required"><br>
+            
+            <input type="text" placeholder="Last Name" data-ng-model="lastName"  id="lastName" name="lastName" class="ng-pristine ng-invalid ng-invalid-requi
+            red"><br>
+            
+            <input type="number" placeholder="Phone Number" data-ng-model="phone" id="phone" name="phone" class="ng-pristine ng-invalid ng-invalid-required ng-valid-num
+            ber"><br>
+
+            <!-- <input type="email" placeholder="Email" data-ng-model="email" id="email" name="email" class="ng-pristine ng-invalid ng-invalid-required ng-valid-email"><br>
+   -->
+            <input type="submit" value="SEND" class="cta" data-ng-disabled="!leadForm.$valid" disabled="disabled">
+            
+            <input type="button" value="++" class="ctaplus" data-ng-hide="showAddFriends" data-ng-click="showAddFriends=true">
+            
+            <input type="button" value="+" class="ctaplus" data-ng-show="showAddFriends">
+            <span class="plusdiv">INVITE A FRIEND</span>
+            
+            <div class="clearfix"></div>
+            <span class="error-message" data-ng-show="leadForm.firstName.$error.required || leadForm.lastName.$error.required || leadForm.email.$error.required" style="">Please fill all fields</span>
+            <span class="error-message" data-ng-show="leadForm.phone.$error.required &amp;&amp; !(leadForm.firstName.$error.required || leadForm.lastName.$error.required || leadForm.email.$error.required)" style="display: none;">Please fill a valid number</span>
+            <span class="error-message" data-ng-show="!leadForm.$error.required &amp;&amp; leadForm.$error.email" style="display: none;">Please fill a valid email</span>
+            </form> 
+
+            <!-- <div class="mylist">
+                <ul >
+                    <li ng-repeat="person in persons">
+                        <h3> {{person.firstName}} {{person.firstName}}</h3>
+                        <h4> {{person.phone}}</h4>
+                        
+                    </li>
+                </ul>   
+            </div> -->
+
+      </div>   
+    
+    </body>
+
+</html>
