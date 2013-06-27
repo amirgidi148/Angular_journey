@@ -5,11 +5,11 @@ function getPersonCtrl($scope) {
 	$scope.persons = [];
 
 	$scope.addPerson = function () {
-		$scope.persons.push({firstName : $scope.firstName , 
-							 lastName : $scope.lastName ,
-							 phone : $scope.phone ,
-							 email : $scope.email
+		$scope.persons.push({pfirstName : $scope.firstName , 
+							 plastName : $scope.lastName ,
+							 pphone : $scope.phone ,
+							 pemail : $scope.email
 							});
-	}
+	};
 }	
 

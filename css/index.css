@@ -1,5 +1,4 @@
 
-/* set placeholder color */
 ::-webkit-input-placeholder { color:rgb(170,75,201); }
 ::-moz-placeholder { color:rgb(170,75,201); } /* firefox 19+ */
 :-ms-input-placeholder { color:rgb(170,75,201); } /* ie */
@@ -9,9 +8,7 @@ input:-moz-placeholder { color:rgb(170,75,201); }
     width: 500px;
     background-color:rgba(240,211,239,0.3) ;
     display: block ;
-	overflow: hidden;
-	padding-left: 10px;	
-	padding-bottom: 30px;
+    overflow: hidden;
 }
 #leadForm h1 {
 	font-family: helvetica, Arial, sans-serif;
